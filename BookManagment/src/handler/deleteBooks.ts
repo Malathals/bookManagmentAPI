@@ -1,17 +1,15 @@
-import express, { Request, Response } from 'express'
-import { BookStore } from '../../models/bookstore'
+import { Book } from '../../models/bookstore'
 
-export const deleteBook = async (req: Request, res: Response) => {
+export const deleteBook = async (req, res) => {
     const bookID = req.params.id
 
     try {
-        const bookToDelete = await BookStore.findOne({
+        const bookToDelete = await Book.findOne({
             where: { book_ID: bookID },
         })
 
         if (!bookToDelete) {
-            res.status(404).json({ message: 'No book found' })
-            return
+            return res.status(404).json({ message: 'No book found' })
         }
 
         await bookToDelete.destroy()

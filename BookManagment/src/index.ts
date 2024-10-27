@@ -3,6 +3,7 @@ import dotenv from 'dotenv'
 import { testConnection } from '../config/db'
 import router from './router/router'
 
+
 dotenv.config()
 
 const app = express()

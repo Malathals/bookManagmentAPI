@@ -2,7 +2,7 @@
 import { Model, DataTypes } from 'sequelize';
 import { sequelize } from '../config/db';
 
-interface BookStoreAttributes {
+interface BookAttributes {
     book_ID?: number; 
     title: string;
     author: string;
@@ -10,7 +10,7 @@ interface BookStoreAttributes {
     numberOfPages: number;
 }
 
-class BookStore extends Model<BookStoreAttributes> implements BookStoreAttributes {
+class Book extends Model<BookAttributes> implements BookAttributes {
     public book_ID!: number; 
     public title!: string;
     public author!: string;
@@ -21,7 +21,7 @@ class BookStore extends Model<BookStoreAttributes> implements BookStoreAttribute
     public readonly updatedAt!: Date;
 }
 
-BookStore.init(
+Book.init(
     {
         book_ID: {
             type: DataTypes.INTEGER, 
@@ -47,9 +47,9 @@ BookStore.init(
     },
     {
         sequelize,
-        tableName: 'BookStores',
+        tableName: 'book',
         timestamps: false,
     }
 );
 
-export { BookStore, BookStoreAttributes };
+export { Book, BookAttributes };

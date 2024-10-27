@@ -10,7 +10,8 @@
     "skipLibCheck": true,
     "typeRoots": ["./node_modules/@types"],         
     "resolveJsonModule": true ,
-    "noUnusedParameters": false                    
+    "noUnusedParameters": false,
+    "noImplicitAny": false,                  
   },
   "include": [
     "src/**/*.ts",                                  

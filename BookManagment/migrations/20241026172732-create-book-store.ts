@@ -3,7 +3,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('BookStores', {
+    await queryInterface.createTable('book', {
       book_ID: {
         type: Sequelize.INTEGER,
         allowNull: false,
@@ -19,7 +19,7 @@ module.exports = {
         allowNull: false,
       },
       publishedDate: {
-        type: Sequelize.DATE,
+        type: Sequelize.DATEONLY,
         allowNull: false,
       },
       numberOfPages: {
@@ -30,6 +30,6 @@ module.exports = {
   },
 
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('BookStores');
+    await queryInterface.dropTable('book');
   }
 };

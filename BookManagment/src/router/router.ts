@@ -1,18 +1,17 @@
 import express from 'express'
 import { getBooks, getBookDetails } from '../handler/getBooks'
-import {addBook} from '../handler/postBooks'
-import {deleteBook} from '../handler/deleteBooks'
+import { addBook } from '../handler/postBooks'
+import { deleteBook } from '../handler/deleteBooks'
+import { updateBookDetail } from '../handler/putBooks'
+import { createUser, logIn } from '../handler/users'
+import { verifyToken } from '../middleware/auth'
 
 const router = express.Router()
 
-router.get('/books', getBooks)
+router.route('/books').get(getBooks).post(verifyToken, addBook)
 
-router.route('/books/:id')
-.get(getBookDetails)
-.post(addBook)
-.delete(deleteBook)
+router.route('/login').post(logIn)
 
-
-
+router.route('/register').post(createUser)
 
 export default router

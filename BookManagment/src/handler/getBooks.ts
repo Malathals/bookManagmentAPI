@@ -1,9 +1,8 @@
-import express, { Request, Response } from 'express'
-import { BookStore } from '../../models/bookstore'
+import { Book } from '../../models/bookstore'
 
-export const getBooks = async (req: Request, res: Response) => {
+export const getBooks = async (req, res) => {
     try {
-        const books = await BookStore.findAll()
+        const books = await Book.findAll()
         !books
             ? res.status(404).json({ message: 'No books found' })
             : res.status(200).json({ message: 'List of books found: ', books })
@@ -13,11 +12,11 @@ export const getBooks = async (req: Request, res: Response) => {
     }
 }
 
-export const getBookDetails = async (req: Request, res: Response) => {
+export const getBookDetails = async (req, res) => {
     const bookID = req.params.id
 
     try {
-        const bookDetailed = await BookStore.findOne({
+        const bookDetailed = await Book.findOne({
             where: { book_ID: bookID },
         })
         !bookDetailed
