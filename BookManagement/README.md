@@ -1,56 +1,72 @@
-Overview
 
-The Book Management API provides a RESTful interface for managing a collection of books, supporting CRUD operations with optional authentication and pagination.
-Prerequisites
+## Overview
 
-    Node.js: v14 or later
-    PostgreSQL: Installed and running on your machine
+The **Book Management API** provides a RESTful interface for managing a collection of books, supporting CRUD operations with optional authentication and pagination.
 
-Setup Instructions
-1. Clone the Repository
+### Prerequisites
 
-2. Install Dependencies
+- **Node.js**: v14 or later
+- **PostgreSQL**: Installed and running on your machine
 
-npm install
+### Setup Instructions
 
-3. Configure Environment Variables
+1. **Clone the Repository**
 
-Create a .env file in the root directory and add the following variables. Replace placeholder values with your PostgreSQL configuration:
+   ```bash
+   git clone <repository-url>
+   cd bookManagementAPI
+   ```
 
-SERVER_PORT=3000                     # The port your server will run on
-DB_PORT=5432                          # Default port for PostgreSQL
-USERNAME=<your_postgres_username>     # Your PostgreSQL username
-PASSWORD=<your_postgres_password>     # Your PostgreSQL password
-DATABASE=<your_database_name>         # The name of your database
-JWT_SECRET=<your_jwt_secret>          # Secret key for JWT authentication
-DB_DIALECT=postgres                   # Database dialect, set to 'postgres' for PostgreSQL
+2. **Install Dependencies**
 
+   ```bash
+   npm install
+   ```
 
-4. Setup the Database
+3. **Configure Environment Variables**
 
-Ensure PostgreSQL is running and create a database:
+   Create a `.env` file in the root directory and add the following variables. Replace placeholder values with your PostgreSQL configuration:
 
+   ```plaintext
+   SERVER_PORT=3000                     # The port your server will run on
+   DB_PORT=5432                          # Default port for PostgreSQL
+   USERNAME=<your_postgres_username>     # Your PostgreSQL username
+   PASSWORD=<your_postgres_password>     # Your PostgreSQL password
+   DATABASE=<your_database_name>         # The name of your database
+   JWT_SECRET=<your_jwt_secret>          # Secret key for JWT authentication
+   DB_DIALECT=postgres                   # Database dialect, set to 'postgres' for PostgreSQL
+   ```
 
-5. Run Database Migrations
+4. **Setup the Database**
 
-npm run migrate
+   Ensure PostgreSQL is running and create a database.
 
-To run the seed data, load it with:
+5. **Run Database Migrations**
 
-npm run seeds
+   Run migrations to set up the database schema:
 
-6. Start the Server
+   ```bash
+   npm run migrate
+   ```
 
-Start the server using Nodemon:
+   To populate the database with seed data, run:
 
-npm start
+   ```bash
+   npm run seeds
+   ```
 
+6. **Start the Server**
 
-Available Scripts
+   Start the server using Nodemon:
 
-    npm start: Runs the server with Nodemon using TypeScript.
-    npm run build: Compiles TypeScript files into JavaScript in the dist folder.
-    npm run migrate: Runs all pending database migrations.
-    npm run undo-migiration: Rolls back the last migration.
-    npm run seeds: Runs all seed files to populate the database.
-    npm run format: Formats code using Prettier.
+   ```bash
+   npm start
+   ```
+
+### Available Scripts
+
+- **`npm start`**: Runs the server with Nodemon using TypeScript.
+- **`npm run migrate`**: Runs all pending database migrations.
+- **`npm run undo-migiration`**: Rolls back the last migration.
+- **`npm run seeds`**: Runs all seed files to populate the database.
+- **`npm run format`**: Formats code using Prettier.
