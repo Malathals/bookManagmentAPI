@@ -65,3 +65,10 @@ The **Book Management API** provides a RESTful interface for managing a collecti
 - **`npm run undo-migiration`**: Rolls back the last migration.
 - **`npm run seeds`**: Runs all seed files to populate the database.
 - **`npm run format`**: Formats code using Prettier.
+
+## API Documentation
+
+For detailed API documentation and example requests, view the Postman documentation [here](https://game-api-4989.postman.co/workspace/Book-management-APIs~8070f0ae-7988-4ce8-86ad-9e6d3e51b9a6/collection/32560433-e4e29f81-66f0-4ed2-9ded-84edc6f001ad?action=share&creator=32560433).
+
+
+
