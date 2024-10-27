@@ -1,0 +1,37 @@
+{
+    "name": "bookmanagment",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "build": "npx tsc",
+        "start": "npx nodemon --exec ts-node src/index.ts",
+        "format": "prettier --write 'src/**/*.ts'",
+        "migrate": "npx sequelize-cli db:migrate",
+        "undo-migiration": "npx sequelize-cli db:migrate:undo",
+        "seeds": "npx sequelize-cli db:seed:all"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "bcrypt": "^5.1.1",
+        "cors": "^2.8.5",
+        "dotenv": "^16.4.5",
+        "express": "^4.21.1",
+        "jsonwebtoken": "^9.0.2",
+        "pg": "^8.13.1",
+        "pg-hstore": "^2.3.4"
+    },
+    "devDependencies": {
+        "@types/cors": "^2.8.17",
+        "@types/express": "^5.0.0",
+        "@types/jasmine": "^5.1.4",
+        "@types/node": "^22.7.9",
+        "@types/supertest": "^6.0.2",
+        "nodemon": "^3.1.7",
+        "prettier": "^3.3.3",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.6.3"
+    }
+}
