@@ -22,7 +22,7 @@ export const getBooks = async (req, res) => {
         console.error('Error occurred while fetching books:', error)
         res.status(500).json({
             message:
-                'An internal server error occurred while fetching the list of books.',
+                'Internal server error occurred while fetching the list of books.',
         })
     }
 }
