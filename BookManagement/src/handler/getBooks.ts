@@ -1,7 +1,11 @@
 import { Book } from '../../models/bookstore'
 
 export const getBooks = async (req, res) => {
-    const { page = 1, size = 10 } = req.query
+    let { page = 1, size = 10 } = req.query
+
+    page = parseInt(page, 10)
+    size = parseInt(size, 10)
+
     const offset = (page - 1) * size
     try {
         const books = await Book.findAll({
