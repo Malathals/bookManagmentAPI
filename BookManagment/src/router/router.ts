@@ -10,8 +10,13 @@ const router = express.Router()
 
 router.route('/books').get(getBooks).post(verifyToken, addBook)
 
-router.route('/login').post(logIn)
+router
+    .route('/books/:id')
+    .get(getBookDetails)
+    .delete(verifyToken, deleteBook)
+    .put(verifyToken, updateBookDetail)
 
+router.route('/login').post(logIn)
 router.route('/register').post(createUser)
 
 export default router
