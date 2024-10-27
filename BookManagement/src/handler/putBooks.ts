@@ -5,7 +5,9 @@ export const updateBookDetail = async (req, res) => {
     const updatedBookData = req.body
 
     if (!updateBookDetail) {
-        return res.status(400).json({ message: 'Updated data are required' })
+        return res
+            .status(400)
+            .json({ message: 'Updated book data is required.' })
     }
 
     try {
@@ -14,7 +16,9 @@ export const updateBookDetail = async (req, res) => {
         })
 
         if (!bookToUpdate) {
-            return res.status(404).json({ message: 'No book found' })
+            return res
+                .status(404)
+                .json({ message: `No book found with ID ${bookID}.` })
         }
 
         await bookToUpdate.update(updatedBookData)
@@ -23,11 +27,15 @@ export const updateBookDetail = async (req, res) => {
             where: { book_ID: bookID },
         })
 
-        return res
-            .status(200)
-            .json({ message: 'Book updated successfully', book: updatedBook })
+        return res.status(200).json({
+            message: `Book with ID ${bookID} updated successfully.`,
+            book: updatedBook,
+        })
     } catch (error) {
-        console.error('Error updating book:', error)
-        res.status(500).json({ message: 'Error updating book' })
+        console.error('Error occurred while updating the book:', error)
+        res.status(500).json({
+            message:
+                'An internal server error occurred while updating the book.',
+        })
     }
 }

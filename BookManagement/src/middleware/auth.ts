@@ -25,6 +25,7 @@ export const verifyToken = (req, res, next) => {
         req.user = req
         next()
     } catch (error) {
+        console.error('Token verification failed:', error)
         return res.status(403).send('Invalid token')
     }
 }
