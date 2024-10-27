@@ -17,13 +17,13 @@ npm install
 
 Create a .env file in the root directory and add the following variables. Replace placeholder values with your PostgreSQL configuration:
 
-SERVER_PORT=3000                   # Server port
-DB_PORT=5432                        # Database port (5432 for PostgreSQL)
-USERNAME=<your_postgres_username>    # PostgreSQL username
-PASSWORD=<your_postgres_password> # PostgreSQL password
-DATABASE=<your_database_name>              # Database name
-JWT_SECRET=<your_jwt_secret>        # JWT secret for authentication
-DB_DIALECT=postgres
+SERVER_PORT=3000                     # The port your server will run on
+DB_PORT=5432                          # Default port for PostgreSQL
+USERNAME=<your_postgres_username>     # Your PostgreSQL username
+PASSWORD=<your_postgres_password>     # Your PostgreSQL password
+DATABASE=<your_database_name>         # The name of your database
+JWT_SECRET=<your_jwt_secret>          # Secret key for JWT authentication
+DB_DIALECT=postgres                   # Database dialect, set to 'postgres' for PostgreSQL
 
 
 4. Setup the Database
